@@ -25,6 +25,14 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew build
 
+    - name: List build artifacts
+      run: |
+        pwd
+        ls -la
+        ls -la build/libs || true
+
+      
+
     - name: Build and Push Docker Image
       uses: mr-smithers-excellent/docker-build-push@v4
       with:
